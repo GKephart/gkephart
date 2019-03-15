@@ -6,7 +6,7 @@
 					(load)="map = $event">
 
 
-			<div *ngFor="let point of points">
+			<ng-container *ngFor="let point of points">
 				<mgl-marker [lngLat]="[point.lng, point.lat]" #myMarker>
 
 					<fa-icon [icon]="fawPaw"></fa-icon>
@@ -14,7 +14,7 @@
 				<mgl-popup [marker]="myMarker">
 					<p>{{point.name}}</p>
 				</mgl-popup>
-			</div>
+			</ng-container>
 		</mgl-map>
 	</div>
 </div>
