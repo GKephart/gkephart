@@ -24,8 +24,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "~mapbox-gl/dist/mapbox-gl.css",
-              "~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
+              "node_modules/mapbox-gl/dist/mapbox-gl.css"
+
             ],
             "scripts": [],
             "es5BrowserSupport": true

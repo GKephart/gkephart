@@ -2,6 +2,20 @@
 	<div class="row">
 
 		<h2>Yay Map fun !!</h2>
-		<mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [center]="[-106.6493357, 35.0856181]" [zoom]="[9]" (load)="map = $event"></mgl-map>
+		<mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [center]="[lng, lat]" [zoom]="[9]" position="top-bottom"
+					(load)="map = $event">
+
+
+			<div *ngFor="let point of points">
+				<mgl-marker [lngLat]="[point.lng, point.lat]" #myMarker>
+
+					<fa-icon [icon]="fawPaw"></fa-icon>
+				</mgl-marker>
+				<mgl-popup [marker]="myMarker">
+					<p>{{point.name}}</p>
+				</mgl-popup>
+			</div>
+		</mgl-map>
 	</div>
 </div>
+
